@@ -1,24 +1,20 @@
-# Development stage
-FROM node:16 as development
+# Utiliza la imagen oficial de Node.js con una versión específica
+FROM node:16
+
+# Establece el directorio de trabajo dentro del contenedor
 WORKDIR /usr/src/app
+
+# Copia los archivos package.json y package-lock.json a la imagen
 COPY package*.json ./
+
+# Instala las dependencias del proyecto
 RUN npm install
-COPY . ./src
-# CMD [ "npm", "run", "start" ]
 
-# Builder stage
-FROM development as builder
-WORKDIR /usr/src/app
-# Build the app with devDependencies still installed from "development" stage
-# RUN npm run build
-# Clear dependencies and reinstall for production (no devDependencies)
-RUN rm -rf node_modules
-RUN npm ci --only=production
+# Copia el resto de los archivos de la aplicación
+COPY . .
 
-# Production stage
-FROM alpine:latest as production
-RUN apk --no-cache add nodejs ca-certificates
-WORKDIR /root/
-COPY --from=builder /usr/src/app ./
+# Expón el puerto en el que la aplicación Express escucha
 # EXPOSE 3000
-CMD [ "node", "./src/index.js" ]
+
+# Comando para ejecutar la aplicación cuando el contenedor se inicia
+CMD ["node", "index.js"]
