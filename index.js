@@ -5,7 +5,7 @@ const port = 3000;
 
 // Ruta principal que muestra "Hola, mundo!"
 app.get("/", (req, res) => {
-  res.send("Hola, mundo!");
+  res.send("Hola Hector!");
 });
 
 // Iniciar el servidor
