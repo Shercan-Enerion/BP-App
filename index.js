@@ -5,7 +5,7 @@ const app = express();
 
 // Ruta principal que muestra "Hola, mundo!"
 app.get("/", (req, res) => {
-  res.send("Hola Hector!");
+  res.send("Hola Wilman!");
 });
 
 // Iniciar el servidor
