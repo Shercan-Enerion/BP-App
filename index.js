@@ -6,6 +6,6 @@ import ViteExpress from "vite-express";
 const port = process.env.PORT || 3000;
 const app = express();
 
-app.get("/message", (_, res) => res.send("Hello from express!"));
+app.get("/message", (_, res) => res.send("Cambiando texto!"));
 
 ViteExpress.listen(app, port, () => console.log("Server is listening..."));
