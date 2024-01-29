@@ -8,5 +8,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-Enlace a FL0 para despliegue continuo:
-https://bp-app-dev-mesa.1.us-1.fl0.io/
+# BP-App
+
+**Esta pagina es para la creación de una pagina PWA para Business park en Panama**
+
+[This is a link this page to the live site](https://bp-app-dev-mesa.1.us-1.fl0.io/)
