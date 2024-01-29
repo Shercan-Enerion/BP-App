@@ -1,14 +1,9 @@
-// index.js
-const express = require("express");
-const port = process.env.PORT || 3000;
+//e.g server.js
+import express from "express";
+import ViteExpress from "vite-express";
+
 const app = express();
 
-// Ruta principal que muestra "Hola, mundo!"
-app.get("/", (req, res) => {
-  res.send("Vamos por toda");
-});
+app.get("/message", (_, res) => res.send("Hello from express!"));
 
-// Iniciar el servidor
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-});
+ViteExpress.listen(app, 3000, () => console.log("Server is listening..."));
